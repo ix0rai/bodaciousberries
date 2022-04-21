@@ -31,7 +31,7 @@ public class ChorusBerries extends Berry {
 
             for (int i = 0; i < 16; i++) {
                 double x = user.getX() + (random.nextDouble() - 0.5D) * 8.0D;
-                double y = MathHelper.clamp(user.getY() + (random.nextInt(16) - 8), world.getBottomY(), (world.getBottomY() + ((ServerWorld) world).getLogicalHeight() - 1));
+                double y = MathHelper.clamp(user.getY() + (random.nextInt(16) - 8), world.getBottomY(), (world.getBottomY() + world.getHeight() - 1));
                 double z = user.getZ() + (random.nextDouble() - 0.5D) * 8.0D;
 
                 if (user.hasVehicle()) {

@@ -2,10 +2,10 @@ package io.ix0rai.bodaciousberries.compat;
 
 import io.ix0rai.bodaciousberries.Bodaciousberries;
 import io.ix0rai.bodaciousberries.block.entity.JuicerRecipes;
-import net.fabricmc.loader.impl.FabricLoaderImpl;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import org.quiltmc.loader.api.QuiltLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class Compat {
         final List<String> loadedCompat = new ArrayList<>();
 
         String id = "moreberries";
-        if (FabricLoaderImpl.INSTANCE.isModLoaded(id)) {
+        if (QuiltLoader.isModLoaded(id)) {
             String[] berryIds = new String[]{"purple", "yellow", "green", "black", "orange", "blue"};
 
             for (String berryId : berryIds) {
@@ -34,7 +34,7 @@ public class Compat {
         }
 
         id = "improved_berries";
-        if (FabricLoaderImpl.INSTANCE.isModLoaded(id)) {
+        if (QuiltLoader.isModLoaded(id)) {
             JuicerRecipes.addJuiceRecipe(Registry.ITEM.getId(Items.SWEET_BERRIES), Registry.ITEM.getId(Items.SWEET_BERRIES), Registry.ITEM.getId(Items.SUGAR), new Identifier(id, "sweet_berry_wine"));
             loadedCompat.add(id);
         }

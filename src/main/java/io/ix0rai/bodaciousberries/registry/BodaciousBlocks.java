@@ -7,7 +7,6 @@ import io.ix0rai.bodaciousberries.block.entity.BerryHarvesterBlockEntity;
 import io.ix0rai.bodaciousberries.block.entity.BerryHarvesterScreenHandler;
 import io.ix0rai.bodaciousberries.block.entity.JuicerBlockEntity;
 import io.ix0rai.bodaciousberries.block.entity.JuicerScreenHandler;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -18,15 +17,16 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class BodaciousBlocks {
     public static final Identifier BERRY_HARVESTER = Bodaciousberries.id("berry_harvester");
-    public static final BerryHarvesterBlock BERRY_HARVESTER_BLOCK = new BerryHarvesterBlock(FabricBlockSettings.of(Material.METAL).strength(4.0f));
+    public static final BerryHarvesterBlock BERRY_HARVESTER_BLOCK = new BerryHarvesterBlock(QuiltBlockSettings.of(Material.METAL).strength(4.0f));
     public static final BlockEntityType<BerryHarvesterBlockEntity> BERRY_HARVESTER_ENTITY = FabricBlockEntityTypeBuilder.create(BerryHarvesterBlockEntity::new, BERRY_HARVESTER_BLOCK).build(null);
     public static final ScreenHandlerType<BerryHarvesterScreenHandler> BERRY_HARVESTER_SCREEN_HANDLER = new ScreenHandlerType<>(BerryHarvesterScreenHandler::new);
 
     public static final Identifier JUICER = Bodaciousberries.id("juicer");
-    public static final JuicerBlock JUICER_BLOCK = new JuicerBlock(FabricBlockSettings.of(Material.METAL).strength(4.0f));
+    public static final JuicerBlock JUICER_BLOCK = new JuicerBlock(QuiltBlockSettings.of(Material.METAL).strength(4.0f));
     public static final BlockEntityType<JuicerBlockEntity> JUICER_ENTITY = FabricBlockEntityTypeBuilder.create(JuicerBlockEntity::new, JUICER_BLOCK).build(null);
     public static final ScreenHandlerType<JuicerScreenHandler> JUICER_SCREEN_HANDLER = new ScreenHandlerType<>(JuicerScreenHandler::new);
 

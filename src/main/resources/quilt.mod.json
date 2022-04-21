@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "${maven_group}",
+    "id": "bodaciousberries",
+    "version": "${version}",
+    "metadata": {
+      "name": "Bodacious Berries",
+      "description": "berries for all!",
+      "contributors": {
+        "ix0rai": "owner",
+        "thonkman": "co-owner"
+      },
+      "icon": "assets/bodaciousberries/icon.png"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {
+      "init": [
+        "io.ix0rai.bodaciousberries.Bodaciousberries"
+      ],
+      "client_init": [
+        "io.ix0rai.bodaciousberries.client.BodaciousberriesClient"
+      ]
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "versions": ">=${loader_version}"
+      },
+      {
+        "id": "quilted_fabric_api",
+        "versions": "${quilted_fabric_api_version}"
+      },
+      {
+        "id": "minecraft",
+        "versions": ">=${minecraft_version}"
+      }
+    ]
+  },
+  "mixin": [
+    "bodaciousberries.mixins.json"
+  ],
+  "minecraft": {
+    "environment": "*"
+  }
+}

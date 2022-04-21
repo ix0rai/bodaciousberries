@@ -5,6 +5,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(DamageSource.class)
+@SuppressWarnings("unused")
 public interface DamageSourceAccessor {
     @Invoker("<init>")
     static DamageSource create(String name) {

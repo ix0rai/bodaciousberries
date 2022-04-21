@@ -7,14 +7,15 @@ import io.ix0rai.bodaciousberries.registry.Bushes;
 import io.ix0rai.bodaciousberries.registry.Juices;
 import io.ix0rai.bodaciousberries.registry.Sounds;
 import io.ix0rai.bodaciousberries.worldgen.BerryBushPatchGen;
-import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.quiltmc.loader.api.ModContainer;
+import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
+import org.apache.logging.log4j.Logger;
 
 public class Bodaciousberries implements ModInitializer {
     public static final String MOD_ID = "bodaciousberries";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public static Identifier id(String path) {
         return new Identifier(idString(path));
@@ -25,7 +26,7 @@ public class Bodaciousberries implements ModInitializer {
     }
 
     @Override
-    public void onInitialize() {
+    public void onInitialize(ModContainer mod) {
         Bushes.registerBushes();
         Berries.registerBerries();
         BodaciousBlocks.registerBlocks();
